@@ -9,8 +9,11 @@
     <h1 class = "intro">
       Welcome to Rock, Paper, Scissors
     </h1>
+
     <!-- player buttons-->
+
     <div class = "moveButtons">
+    
       <button class = "playRock" onclick= " 
           machMove();
           if(machineMove==='rock'){
@@ -76,9 +79,23 @@
       <p id = 'matchup'></p>
       <p id = "result"></p> 
       <p id = "scoreboard"> </p>
-  
-
+      
+      
     <script>
+      //value 0-1;
+      const trueOrFalse = Math.random();
+      /* variable message using the TERNARY OPERATOR - It acts as an if else statement 'condition' ? 'truthy' : 'falsy'; better than an if 
+      statement because we can save the ternary operator as a variable!*/
+
+      const message = trueOrFalse > 0.5 ? 'true' : 'false';
+      console.log(message);
+
+      //default operator
+      const defaultUSD = undefined || 'USD';
+      console.log(defaultUSD);
+      //guard operator
+      const guard = trueOrFalse && 'treasure';
+      console.log(guard);
       //variable declarations
       let result = ' ';
       let machineMove = '';
@@ -101,6 +118,6 @@
           machineMove = 'scissors';
         }
       }
-      
+
     </script>
   </body>

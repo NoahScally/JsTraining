@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Booleans</title>
+    <title>objects</title>
     <link rel = "stylesheet" href = "styles/06-booleans.css"> 
   </head>
   <body>
 
-    <h1 class = "intro">
+
+       <h1 class = "intro">
       Welcome to Rock, Paper, Scissors
     </h1>
 
@@ -23,86 +24,70 @@
       <button class = "playScissors" onclick= " playGame('scissors') ">
          <img class = "Scissors" src = "images/scissors-emoji.png">
       </button>
+      <button class = "reset" onclick= " score.wins = 0; score.ties = 0; score.losses = 0; report()" >
+        Reset
+      </button>
     </div>
       
       <p>Result:</p> 
       <p id = 'matchup'></p>
       <p id = "result"></p> 
       <p id = "scoreboard"> </p>
-      
-      
+    <!-- JS starts here-->
     <script>
-      //value 0-1;
-      const trueOrFalse = Math.random();
-      /* variable message using the TERNARY OPERATOR - It acts as an if else statement 'condition' ? 'truthy' : 'falsy'; better than an if 
-      statement because we can save the ternary operator as a variable!*/
-
-      const message = trueOrFalse > 0.5 ? 'true' : 'false';
-      console.log(message);
-
-      //default operator
-      const defaultUSD = undefined || 'USD';
-      console.log(defaultUSD);
-      //guard operator
-      const guard = trueOrFalse && 'treasure';
-      console.log(guard);
-      //variable declarations
       let result = ' ';
       let machineMove = '';
-      let wins = 0, losses = 0, ties = 0;
       let randomNumber = 0;
+
+      
       //functions
-      function upDateResult(){
-        document.getElementById("result").textContent = `you ${result}`;
-        document.getElementById("scoreboard").textContent = `wins: ${wins} , ties:${ties} , losses: ${losses}`;
-      }
 
       function playGame(playerMove){
         machMove();
         if (playerMove=='rock'){
             if(machineMove==='rock'){
-            result = 'tie';
-            ties++;
+            score.ties++;
+            score.result = 'tie';
           }
           else if(machineMove==='paper') {
-            result = 'lose';
-            losses++;
+           score.losses++;
+           score.result = 'lose';
           }
           else{
-            result = 'win';
-            wins++;
+            score.wins++;
+            score.result = 'win';
           }
         }
         else if(playerMove=='paper'){
           if(machineMove==='paper'){
-            result = 'tie';
-            ties++;
+            score.ties++;
+            score.result = 'tie';
           }
           else if(machineMove==='scissors') {
-            result = 'lose';
-            losses++;
+            score.losses++;
+            score.result = 'lose';
           }
           else{
-            result = 'win';
-            wins++;
+            score.wins++;
+            score.result = 'win';
           }
         }
         else{
             if(machineMove==='scissors'){
-            result = 'tie';
-            ties++;
+            score.ties++;
+            score.result = 'tie';
           }
           else if(machineMove==='rock') {
-            result = 'lose';
-            losses++;
+            score.losses++;
+            score.result = 'lose';
           }
           else{
-            result = 'win';
-            wins++;
+            score.wins++;
+            score.result = 'win';
           }
         }
         console.log(result);
-        upDateResult();
+        report();
         return;
       }
       function machMove(){
@@ -118,8 +103,30 @@
         }
         return machineMove;
       }
-      function chooseWinner(playerMove, machineMove){
+      // parsing our JSON string and storing it in SCORE object; also using default operator
+      let score = JSON.parse(localStorage.getItem('score')) ||  {
+        result: '',
+        wins: 0,
+        ties: 0,
+        losses: 0
+        };
+      //local storage setup, works with key value pair, both are strings
+      localStorage.setItem('score', JSON.stringify(score));
+      function report() {
+          document.getElementById("result").textContent = `you ${score.result}`;
+          document.getElementById("scoreboard").textContent = `wins: ${score.wins} ties: ${score.ties} losses: ${score.losses}`;
+        }
+      
+      // simple object
+      const obj1 = {
+        message: 'hello',
+        atribute2: 'hey'
+      };
+      //called destructing, we make a variable message, and get the message attribute from obj1 at the same time, storing it at the variable.
+      const {message} = obj1; 
+      
+      
 
-      }
+     
     </script>
   </body>

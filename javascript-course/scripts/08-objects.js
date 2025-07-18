@@ -93,3 +93,5 @@ atribute2: 'hey'
 };
 //called destructing, we make a variable message, and get the message attribute from obj1 at the same time, storing it at the variable.
 const {message} = obj1; 
+
+

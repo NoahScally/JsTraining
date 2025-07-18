@@ -1,4 +1,4 @@
-#lesson 09: DOM
+# lesson 09: DOM
 
 ## tasks accomplished
 -interactive buttons combining JS and HTML

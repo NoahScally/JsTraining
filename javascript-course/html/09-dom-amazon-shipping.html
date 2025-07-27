@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<Head>
+
+
+</Head>
+
+<body>
+  <p>Amazon Shipping</p>
+    <input placeholder=" Cost of order" class= "js-cost-input" onkeydown="
+     handleCostKeyDown(event);
+    ">
+
+    <button onclick="calcTotal()" class="js-total-cost">
+      Calculate
+    </button>
+    <p class = "js-cost"> </p>
+
+
+  <script>
+    //window object == built in object,represents whole browser page, js auto-adds this, so you never have to do window.
+    window.console.log("hello");
+
+
+
+    function calcTotal(){
+
+      const inputElement = document.querySelector(".js-cost-input");
+      let cost = Number(inputElement.value);
+      if(cost < 40){
+         cost = cost + 10;
+      }
+      document.querySelector(".js-cost")
+      .innerHTML = String(cost);
+
+    }
+    function handleCostKeyDown(event){
+      if(event.key ==='Enter'){
+      calcTotal();
+    }
+    }
+    
+
+  </script>
+</body>

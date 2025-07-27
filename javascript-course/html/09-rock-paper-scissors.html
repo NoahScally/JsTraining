@@ -39,6 +39,7 @@
       <script>
       
       let machineMove = '';
+      let pMove = '';
       let randomNumber = 0;
       let result = ' ';
       //local storage setup, works with key value pair, both are strings
@@ -60,12 +61,14 @@
       
       //functions
       function report() {
+      document.getElementById("matchup").textContent = `you played ${pMove} - machine played: ${machineMove}`
       document.getElementById("result").textContent = `you ${score.result}`;
       document.getElementById("scoreboard").textContent = `wins: ${score.wins} ties: ${score.ties} losses: ${score.losses}`;
       }
       console.log(localStorage.getItem('score'));
       report();
       function playGame(playerMove){
+        pMove = playerMove;
         machMove();
         if (playerMove=='rock'){
             if(machineMove==='rock'){

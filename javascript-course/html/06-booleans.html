@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booleans</title>
+    <link rel = "stylesheet" href = "styles/06-booleans.css"> 
+  </head>
+  <body>
+
+    <h1 class = "intro">
+      Welcome to Rock, Paper, Scissors
+    </h1>
+
+    <!-- player buttons-->
+
+    <div class = "moveButtons">
+    
+      <button class = "playRock" onclick= " 
+          machMove();
+          if(machineMove==='rock'){
+            result = 'tie';
+            ties++;
+          }
+          else if(machineMove==='paper') {
+            result = 'lose';
+            losses++;
+          }
+          else{
+            result = 'win';
+            wins++;
+          }
+          console.log(result);
+          upDateResult();
+        ">
+        <img class = "rock" src = "images/rock-emoji.png">
+      </button>
+      <button class = "playPaper" onclick= "
+          machMove();
+          if(machineMove==='paper'){
+            result = 'tie';
+            ties++;
+          }
+          else if(machineMove==='scissors') {
+            result = 'lose';
+            losses++;
+          }
+          else{
+            result = 'win';
+            wins++;
+          }
+          console.log(result);
+          upDateResult();
+
+        ">
+         <img class = "paper" src = "images/paper-emoji.png">
+      </button>
+      <button class = "playScissors" onclick= "
+          machMove();
+          if(machineMove==='scissors'){
+            result = 'tie';
+            ties++;
+          }
+          else if(machineMove==='rock') {
+            result = 'lose';
+            losses++;
+          }
+          else{
+            result = 'win';
+            wins++;
+          }
+          console.log(result);
+          upDateResult();
+
+        ">
+         <img class = "Scissors" src = "images/scissors-emoji.png">
+      </button>
+    </div>
+      
+      <p>Result:</p> 
+      <p id = 'matchup'></p>
+      <p id = "result"></p> 
+      <p id = "scoreboard"> </p>
+      
+      
+    <script>
+      //value 0-1;
+      const trueOrFalse = Math.random();
+      /* variable message using the TERNARY OPERATOR - It acts as an if else statement 'condition' ? 'truthy' : 'falsy'; better than an if 
+      statement because we can save the ternary operator as a variable!*/
+
+      const message = trueOrFalse > 0.5 ? 'true' : 'false';
+      console.log(message);
+
+      //default operator
+      const defaultUSD = undefined || 'USD';
+      console.log(defaultUSD);
+      //guard operator
+      const guard = trueOrFalse && 'treasure';
+      console.log(guard);
+      //variable declarations
+      let result = ' ';
+      let machineMove = '';
+      let wins = 0, losses = 0, ties = 0;
+      let randomNumber = 0;
+      //functions
+      function upDateResult(){
+        document.getElementById("result").textContent = `you ${result}`;
+        document.getElementById("scoreboard").textContent = `wins: ${wins} , ties:${ties} , losses: ${losses}`;
+      }
+      function machMove(){
+        randomNumber = Math.random();
+        if(randomNumber < (1/3)){
+          machineMove = 'rock';
+        }
+        else if(randomNumber < (2/3)){  
+          machineMove = 'paper';
+        }
+        else{
+          machineMove = 'scissors';
+        }
+      }
+
+    </script>
+  </body>

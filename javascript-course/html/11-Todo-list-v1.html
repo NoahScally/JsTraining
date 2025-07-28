@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<Head>
+<title> Arrays and Loops </title>
+
+</Head>
+
+<body>
+  <p> Todo list</p>
+  <input placeholder="Enter todo" class = "todoInput">
+  <button onclick="
+    inputTodo();
+  "
+  > add todo</button>
+  <script>
+    //simple code, no loops, no todo display
+    const todoList = [];
+
+    function inputTodo(){
+      const inputElement = document.querySelector(".todoInput")
+      const todo = inputElement.value;
+      todoList.push(todo);
+      console.log(todoList);
+      inputElement.value = '';
+    }
+    
+    function displayTodo(){
+
+    }
+    function deleteTodo(){
+
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+.body{
+    font-family: Arial;
+}
+.todo-grid {
+    display: grid;
+    grid-template-rows: 200px 150px 100px;
+}

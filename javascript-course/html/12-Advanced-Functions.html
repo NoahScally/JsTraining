@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <Head>
+    <title> Advanced Functions </title>
+
+  </Head>
+
+  <body>
+    
+
+
+
+
+    
+    <script>
+
+      
+      //functions are values
+      //setTimeout(); is a built in function; it allows us to run code after a timeout
+      //setTimeout calls the function after 5 seconds!
+      setTimeout(function(){console.log("hello")}, 5000);
+      //For each method is the preffered way to loop through arrays(over for loops and doing array[i])
+
+      ['make dinner', `${12}`, '12'].forEach(function(value){console.log(value)});
+      //above I made an array of values, called the for each function on it,
+      //passed a function to forEach(), passed each value of the array as a parameter to the function
+      //setInterval is a function that runs a function repeatedly at a set interval, it returns an interval ID
+      //we pass a callback function to setInterval, because it needs a function to call repeatedly, not a value. console.log('hello') is a value, not a function!!
+      let intervalID = setInterval(function(){
+        console.log("hello");
+      }, 1000);
+
+      setTimeout(function(){
+        clearInterval(intervalID);
+      }, 5000);
+
+    </script>
+  </body>
+</html>

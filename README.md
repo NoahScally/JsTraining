@@ -1,8 +1,15 @@
 # lesson
 
-## 11-Arrays-and-Loops
+## 12-Advanced-Functions
 
 ### tools/skills learned
-- Concepts: using js to generate HTML, Json Objects,
-- structure: seperation of js, css, and html into differnet documents.
-- querySelect()
+#### Concepts: 
+- [ ] Passing functions as values
+- [ ] Callback Functions
+- [ ] Destructuring
+- [ ] async vs sync code (setInterval, setTimeout = async)
+
+
+
+
+- forEach(), setInterval(), clearInterval();

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<Head>
+<title> Arrays and Loops </title>
+
+</Head>
+
+<body>
+  <p> Todo list</p>
+  <input placeholder="Enter todo" class = "todoInput">
+  <button onclick="
+    inputTodo();
+  "
+  > add todo</button>
+  <input type="date" class= 'dateInput'/>
+  <div class = 'todoDisplay'> text</div>
+
+  <script>
+    //mock data for testing
+    //now in order to group the todo + date, we use objects
+    const todoList = [{
+      name:"make dinner",
+      dueDate: "2004-09-09"},{
+      name:"clean kitchen",
+      dueDate: "2025-07-28"}
+    ];
+    
+
+    function inputTodo(){
+      const inputElement = document.querySelector(".todoInput")
+      const todo = inputElement.value;
+      todoList.push(todo);
+      inputElement.value = '';
+      const dateInputElement = document.querySelector('.dateInput');
+      const date = dateInputElement.value;
+      todoList.
+      renderTodoList();
+
+    }
+    
+    function renderTodoList(){
+      let todoListHTML ='';
+
+      todoList.forEach(function(todoObject, index){
+        const {name, dueDate} = todoObject;
+        const html = `
+       <div> ${todoObject.name} </div>
+        <div>  ${todoObject.date}  </div>
+        <button class= "deleteButton" onclick="
+            todoList.splice('${i}', 1);
+            renderTodoList();
+          "> 
+            Delete 
+        </button>`;
+        todoListHTML += html;
+      });}
+      document.querySelector('.todoDisplay').innerHTML = todoListHTML;
+  </script>
+</body>
+</html>

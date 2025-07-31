@@ -4,7 +4,7 @@
 
 ### tools/skills learned
 #### Concepts: 
-- [ ] Passing functions as values
+- [ x] Passing functions as values
 - [ ] Callback Functions
 - [ ] Destructuring
 - [ ] async vs sync code (setInterval, setTimeout = async)

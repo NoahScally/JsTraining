@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <Head>
+    <title> 12j-PE-Arrow-Func</title>
+
+  </Head>
+
+  <body>
+
+    <script>
+      //remember, even though its const, it is only reffering to the function, so I can call the function multiple times no problem.
+      const multiply = (num, num2) => {
+        return num * num2;
+      }
+      //even faster
+      const multiply2 = (num, num2) => num * num2;
+
+      console.log(multiply(4,3));
+      console.log(multiply2(2,2));
+
+    </script>
+  </body>
+</html>

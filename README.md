@@ -4,12 +4,17 @@
 
 ### tools/skills learned
 #### Concepts: 
-- [ ] Passing functions as values
-- [ ] Callback Functions
-- [ ] Destructuring
-- [ ] async vs sync code (setInterval, setTimeout = async)
+- [x] Functions = values
+- [x] Callback Functions
+- [x] Destructuring
+- [x] async vs sync code (setInterval, setTimeout == async)
+- [x] closure (scope of a variable in a function)
 
 
 
+#### Tools:
 
-- forEach(), setInterval(), clearInterval();
+##### Functions:
+
+- [x] ArrowFunctions, .addEventListener()
+- [x] forEach(), setInterval(), clearInterval(), setTimeout();

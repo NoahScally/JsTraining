@@ -7,14 +7,26 @@
 
   <body>
     
-
+    <button class = 'js-button'> click</button>
 
 
 
     
     <script>
+      //event listeners allows us to add multiple event listeners to the same event; we can also remove event listeners.
+      const buttonElement = document.querySelector('.js-button');
 
-      
+        const eventListener = ()=>{
+          console.log('click');
+        }
+        buttonElement.addEventListener('click', eventListener)
+        buttonElement.addEventListener('click', ()=>{
+          console.log('click2');
+        })
+
+        buttonElement.removeEventListener('click',eventListener)
+
+      /*
       //functions are values
       //setTimeout(); is a built in function; it allows us to run code after a timeout
       //setTimeout calls the function after 5 seconds!
@@ -34,6 +46,30 @@
         clearInterval(intervalID);
       }, 5000);
 
+      const arrowFunction = (param,param2) => {
+        console.log("whats up");
+        return 5;
+      };
+      arrowFunction();
+
+      //arrowFunction shortcuts
+
+      const oneParam = param => {
+        console.log(2+param);
+      }
+      oneParam(5);
+
+      const oneLine = () => 5+2;
+      console.log(oneLine());
+      
+      //shorthand method syntax
+
+      const obj = {
+        method() {
+
+        }
+      };
+      */
     </script>
   </body>
 </html>
